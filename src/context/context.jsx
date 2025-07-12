@@ -7,7 +7,8 @@ import { Deta } from "../Data/data";
  export let ContextFuntion = ({children})=>{
 
  let [number,setNumber] = useState(0)
-    let [result,setresult] = useState(0)
+    let [show,setShow]  = useState(true)
+    let [result,setresult] = useState(false)
    let [bool,setbool] = useState(null)
     let questionChange = ()=>{
       setTimeout(()=>{
@@ -22,16 +23,28 @@ import { Deta } from "../Data/data";
          if (element.correct==true) {
                 setresult(result+1)
                 setbool(true)
+               
                 setTimeout(()=>{
                    setbool(null)
+                  
                 },2000)
                
+         }
+         else{
+          setresult(result+1)
+                setbool(true)
+               
+                setTimeout(()=>{
+                   setbool(null)
+                  
+                },2000)
          }
         
      
     }
+    
 
-   return <Context.Provider value={{number,result,results,questionChange,bool}}>
+   return <Context.Provider value={{number,result,results,questionChange,bool,show}}>
          {children}
    </Context.Provider>
  }
