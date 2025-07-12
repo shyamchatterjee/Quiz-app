@@ -1,6 +1,12 @@
 
 @import "tailwindcss";
+body{
+  background-color: #eaeaea;
+}
 #root{
   width: 100%;
   height: 100vh;
+}
+.div{
+  box-shadow: 0  0 1px 0 black;
 }

@@ -23,7 +23,7 @@ import { Deta } from "../Data/data";
          if (element.correct==true) {
                 setresult(result+1)
                 setbool(true)
-               
+                  
                 setTimeout(()=>{
                    setbool(null)
                   
@@ -42,9 +42,22 @@ import { Deta } from "../Data/data";
         
      
     }
+    let showfuntion = ()=>{
+       if (Deta[number].id+1==Deta.length) {
+        setShow(false)
+       }
+    }
+    let resetbutton = ()=>{
+     
+          setNumber(0)
+     
+        
+      
+         
+    }
     
 
-   return <Context.Provider value={{number,result,results,questionChange,bool,show}}>
+   return <Context.Provider value={{number,result,results,questionChange,bool,show,resetbutton,showfuntion}}>
          {children}
    </Context.Provider>
  }
